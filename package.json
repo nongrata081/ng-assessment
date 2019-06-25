@@ -1,6 +1,6 @@
 {
   "name": "ng-assessment",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -24,18 +24,47 @@
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "commit": "git-cz",
+    "enforce:gitflow": "node ./node_modules/.bin/enforce-gitflow-branches",
+    "recommended:bump": "conventional-recommended-bump --preset=angular",
+    "generate:changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "@angular/cli": "8.0.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
     "@nrwl/workspace": "8.1.2",
+    "@rubedo/devkit": "^0.1.2",
     "@types/node": "~8.9.4",
+    "commitizen": "latest",
+    "conventional-changelog-cli": "latest",
+    "conventional-recommended-bump": "latest",
+    "cz-conventional-changelog": "latest",
     "dotenv": "6.2.0",
+    "enforce-gitflow-branches": "latest",
+    "husky": "latest",
+    "prettier": "1.16.4",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.4.5",
-    "prettier": "1.16.4",
-    "@angular/cli": "8.0.0"
+    "typescript": "~3.4.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run enforce:gitflow",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
