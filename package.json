@@ -26,7 +26,8 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "commit": "git-cz",
-    "enforce:gitflow": "node ./node_modules/.bin/enforce-gitflow-branches"
+    "enforce:gitflow": "node ./node_modules/.bin/enforce-gitflow-branches",
+    "recommended:bump": "conventional-recommended-bump --preset=angular"
   },
   "private": true,
   "dependencies": {},
@@ -38,6 +39,7 @@
     "@rubedo/devkit": "^0.1.2",
     "@types/node": "~8.9.4",
     "commitizen": "latest",
+    "conventional-recommended-bump": "latest",
     "cz-conventional-changelog": "latest",
     "dotenv": "6.2.0",
     "enforce-gitflow-branches": "latest",
