@@ -25,7 +25,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "enforce:gitflow": "node ./node_modules/.bin/enforce-gitflow-branches"
   },
   "private": true,
   "dependencies": {},
@@ -37,6 +38,8 @@
     "commitizen": "latest",
     "cz-conventional-changelog": "latest",
     "dotenv": "6.2.0",
+    "enforce-gitflow-branches": "latest",
+    "husky": "latest",
     "prettier": "1.16.4",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
@@ -45,6 +48,11 @@
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run enforce:gitflow"
     }
   }
 }
