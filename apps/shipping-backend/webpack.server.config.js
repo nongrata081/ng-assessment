@@ -1,16 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
-const WebpackConfigFactory = require('@nestjs/ng-universal')
+const WebpackConfigFactory = require('@nestjs/ng-universal/index')
   .WebpackConfigFactory;
 
 const config = WebpackConfigFactory.create(webpack, {
   // Nest server for SSR
-  server: './server/main.ts'
+  server: './apps/shipping-backend/src/main.ts'
 });
 
 config.output = {
   // Puts the output at the root of the dist folder
-  path: path.join(__dirname, 'dist'),
+  path: path.join(__dirname, '../../dist/apps/shipping-backend'),
   filename: '[name].js'
 };
 config.plugins = [

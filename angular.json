@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/browser",
+            "outputPath": "dist/apps/shipping",
             "index": "apps/shipping/src/index.html",
             "main": "apps/shipping/src/main.ts",
             "polyfills": "apps/shipping/src/polyfills.ts",
@@ -33,12 +33,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/shipping/src/environments/environment.ts",
-                  "with": "apps/shipping/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "apps/shipping/src/environments/environment.ts",
+                "with": "apps/shipping/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -48,13 +46,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -98,18 +94,16 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/server",
+            "outputPath": "dist/apps/shipping-backend",
             "main": "apps/shipping/src/main.server.ts",
             "tsConfig": "apps/shipping/tsconfig.server.json"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/shipping/src/environments/environment.ts",
-                  "with": "apps/shipping/src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "apps/shipping/src/environments/environment.ts",
+                "with": "apps/shipping/src/environments/environment.prod.ts"
+              }]
             }
           }
         }
@@ -163,12 +157,10 @@
               "optimization": true,
               "extractLicenses": true,
               "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/shipping-backend/src/environments/environment.ts",
-                  "with": "apps/shipping-backend/src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "apps/shipping-backend/src/environments/environment.ts",
+                "with": "apps/shipping-backend/src/environments/environment.prod.ts"
+              }]
             }
           }
         },
