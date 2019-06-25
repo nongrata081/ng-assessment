@@ -27,7 +27,8 @@
     "help": "nx help",
     "commit": "git-cz",
     "enforce:gitflow": "node ./node_modules/.bin/enforce-gitflow-branches",
-    "recommended:bump": "conventional-recommended-bump --preset=angular"
+    "recommended:bump": "conventional-recommended-bump --preset=angular",
+    "generate:changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "private": true,
   "dependencies": {},
@@ -39,6 +40,7 @@
     "@rubedo/devkit": "^0.1.2",
     "@types/node": "~8.9.4",
     "commitizen": "latest",
+    "conventional-changelog-cli": "latest",
     "conventional-recommended-bump": "latest",
     "cz-conventional-changelog": "latest",
     "dotenv": "6.2.0",
