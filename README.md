@@ -156,6 +156,15 @@ Run `npm run dep-graph` to generate & open the graph of dependencies in the work
 Run `npm run affected:dep-graph` to see the graph of affected entities in the app
 (since retesting & rebuilding everything always will not be scalable and will take too much time).
 
+## CI/CD
+
+`.travis.yml` has next steps for travis ci:
+
+- commit lint
+- lint
+- unit test
+- e2e
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
