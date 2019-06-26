@@ -1,5 +1,12 @@
 # NgAssessment
 
+## Application shell
+Run `npm run build:shell` to build the shipping angular app with app shell.
+To verify that app shell was built successfully check the contents of `dist/apps/shipping/index.html`
+to contain rendered contents of `apps/shipping/src/app/app-shell/`.
+
+For profiling open the shipping app in chrome and in `Performance` tab hit `Shift + Cmd + E`. 
+
 ## SSR
 
 To verify that SSR works, run:
