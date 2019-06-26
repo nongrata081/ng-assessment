@@ -14,6 +14,20 @@ To lint apps & libs separately run either of following:
 
 Linting of all apps & libs is done automatically on `pre-commit` and `pre-push`
 
+## Coverage
+
+In order to test coverage of all apps & libs run `npm run test:coverage`
+Results are available in `coverage/` dir in root.
+
+Coverage is checked while unit-testing the app in `pre-push` (will fail if unit tests don't meet coverage thresholds).
+
+Coverage thresholds are setup in `jest.config.js` :
+
+- branches: 100
+- functions: 100
+- lines: 100
+- statements: -10
+
 ## Consistent code style
 
 Consistent code style is enforced with [Prettier](https://prettier.io/).
