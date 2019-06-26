@@ -14,6 +14,18 @@ To lint apps & libs separately run either of following:
 
 Linting of all apps & libs is done automatically on `pre-commit` and `pre-push`
 
+## Unit tests
+
+To unit test all apps & libs run `npm run test`. By default if no tests are specified for app / lib it will pass.
+
+- `ng test shipping`
+- `ng test shipping-e2e`
+- `ng test shipping-backend`
+- `ng test data`
+- `ng test ui-components`
+
+Unit testing of all apps & libs is done automatically on `pre-push`.
+
 ## Coverage
 
 In order to test coverage of all apps & libs run `npm run test:coverage`
