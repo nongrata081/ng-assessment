@@ -35,10 +35,20 @@ To verify that SSR works, run:
 All contents of the app component will be rendered to retrieved html file. If you do the same with
 `npm run start` the retrieved html file will only contain `<app-root></app-root>` element but not its content.
 
+## Shared UI-components library
+
+Multiple front-end apps might be consuming reusable shared UI-components. Reusing shared UI-components with
+well-defined APIs will make development and delivery of domain related value easier & faster. Thus shared
+UI-components should be placed into `ui-components` library, located at `libs/ui-components`.
+
+- to lint data library run `ng lint ui-components`
+- to test data library run `ng test ui-components`
+
 ## Shared data library
 
 Front-end and back-end apps should use as much shared code, as possible, in order to prevent diverging of the code
-for same entities in FE and BE, which will make the entire app more error-prone eventually. Thus for keeping shared code between FE and BE apps there is a lintable & testable `data` library, located at `libs/data`.
+for same entities in FE and BE, which will make the entire app more error-prone eventually. Thus for keeping shared
+code between FE and BE apps there is a lintable & testable `data` library, located at `libs/data`.
 
 - to lint data library run `ng lint data`
 - to test data library run `ng test data`
