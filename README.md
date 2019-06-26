@@ -1,5 +1,15 @@
 # NgAssessment
 
+## Fake REST API
+
+Mocked backed is implemented with [json-server](https://github.com/typicode/json-server).
+
+Creates rest endpoints from a json-config at `fake-rest-api/endpoints.json`
+
+Run `npm run fake:rest:api` to create a server.
+
+Server portal with resource description is available at http://localhost:3000
+
 ## Linting
 
 To lint all apps & libs run `npm run lint`
