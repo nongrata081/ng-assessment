@@ -1,5 +1,74 @@
 # NgAssessment
 
+## Linting
+
+To lint all apps & libs run `npm run lint`
+
+To lint apps & libs separately run either of following:
+
+- `ng lint shipping`
+- `ng lint shipping-e2e`
+- `ng lint shipping-backend`
+- `ng lint data`
+- `ng lint ui-components`
+
+Linting of all apps & libs is done automatically on `pre-commit` and `pre-push`
+
+## Consistent code style
+
+Consistent code style is enforced with [Prettier](https://prettier.io/).
+
+Settings are available in `.prettierignore` & `.prettierrc`
+
+To prettify the codebase manually, run `npm run prettify`
+
+Executed automatically on:
+
+- `pre-commit`
+- `pre-push`
+- in `ci`
+
+## Application shell
+
+Run `npm run build:shell` to build the shipping angular app with app shell.
+To verify that app shell was built successfully check the contents of `dist/apps/shipping/index.html`
+to contain rendered contents of `apps/shipping/src/app/app-shell/`.
+
+For profiling open the shipping app in chrome and in `Performance` tab hit `Shift + Cmd + E`.
+
+## SSR
+
+To verify that SSR works, run:
+
+- `npm run ssr` to build client and server and serve with server-side rendering
+  - UI at http://localhost:4000/
+  - API at http://localhost:4000/api
+- `curl http://localhost:4000/ > shipping.html` that will put all the contents of the retrieved html file
+  via http request to **curl.html** in the root.
+
+All contents of the app component will be rendered to retrieved html file. If you do the same with
+`npm run start` the retrieved html file will only contain `<app-root></app-root>` element but not its content.
+
+## Shared UI-components library
+
+Multiple front-end apps might be consuming reusable shared UI-components. Reusing shared UI-components with
+well-defined APIs will make development and delivery of domain related value easier & faster. Thus shared
+UI-components should be placed into `ui-components` library, located at `libs/ui-components`.
+
+- to lint data library run `ng lint ui-components`
+- to test data library run `ng test ui-components`
+
+## Shared data library
+
+Front-end and back-end apps should use as much shared code, as possible, in order to prevent diverging of the code
+for same entities in FE and BE, which will make the entire app more error-prone eventually. Thus for keeping shared
+code between FE and BE apps there is a lintable & testable `data` library, located at `libs/data`.
+
+- to lint data library run `ng lint data`
+- to test data library run `ng test data`
+
+---
+
 This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>

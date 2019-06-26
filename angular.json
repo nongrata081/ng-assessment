@@ -1,14 +1,282 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "",
-  "projects": {},
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/workspace"
-  },
-  "schematics": {}
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "",
+	"projects": {
+		"shipping": {
+			"projectType": "application",
+			"schematics": {
+				"@nrwl/workspace:component": {
+					"style": "scss"
+				}
+			},
+			"root": "apps/shipping",
+			"sourceRoot": "apps/shipping/src",
+			"prefix": "ship",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/apps/shipping",
+						"index": "apps/shipping/src/index.html",
+						"main": "apps/shipping/src/main.ts",
+						"polyfills": "apps/shipping/src/polyfills.ts",
+						"tsConfig": "apps/shipping/tsconfig.app.json",
+						"assets": [
+							"apps/shipping/src/favicon.ico",
+							"apps/shipping/src/assets"
+						],
+						"styles": ["apps/shipping/src/styles.scss"],
+						"scripts": []
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "apps/shipping/src/environments/environment.ts",
+									"with": "apps/shipping/src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "shipping:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "shipping:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "shipping:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"apps/shipping/tsconfig.app.json",
+							"apps/shipping/tsconfig.spec.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/shipping/jest.config.js",
+						"tsConfig": "apps/shipping/tsconfig.spec.json",
+						"setupFile": "apps/shipping/src/test-setup.ts"
+					}
+				},
+				"server": {
+					"builder": "@angular-devkit/build-angular:server",
+					"options": {
+						"outputPath": "dist/apps/shipping-backend",
+						"main": "apps/shipping/src/main.server.ts",
+						"tsConfig": "apps/shipping/tsconfig.server.json"
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "apps/shipping/src/environments/environment.ts",
+									"with": "apps/shipping/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"app-shell": {
+					"builder": "@angular-devkit/build-angular:app-shell",
+					"options": {
+						"browserTarget": "shipping:build",
+						"serverTarget": "shipping:server",
+						"route": "shell"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "shipping:build:production",
+							"serverTarget": "shipping:server:production"
+						}
+					}
+				}
+			}
+		},
+		"shipping-e2e": {
+			"root": "apps/shipping-e2e",
+			"sourceRoot": "apps/shipping-e2e/src",
+			"projectType": "application",
+			"architect": {
+				"e2e": {
+					"builder": "@nrwl/cypress:cypress",
+					"options": {
+						"cypressConfig": "apps/shipping-e2e/cypress.json",
+						"tsConfig": "apps/shipping-e2e/tsconfig.e2e.json",
+						"devServerTarget": "shipping:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "shipping:serve:production"
+						}
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": "apps/shipping-e2e/tsconfig.e2e.json"
+					}
+				}
+			}
+		},
+		"shipping-backend": {
+			"root": "apps/shipping-backend",
+			"sourceRoot": "apps/shipping-backend/src",
+			"projectType": "application",
+			"prefix": "shipping-backend",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/shipping-backend",
+						"main": "apps/shipping-backend/src/main.ts",
+						"tsConfig": "apps/shipping-backend/tsconfig.app.json",
+						"assets": ["apps/shipping-backend/src/assets"]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/shipping-backend/src/environments/environment.ts",
+									"with": "apps/shipping-backend/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "shipping-backend:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"apps/shipping-backend/tsconfig.app.json",
+							"apps/shipping-backend/tsconfig.spec.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/shipping-backend/jest.config.js",
+						"tsConfig": "apps/shipping-backend/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"data": {
+			"root": "libs/data",
+			"sourceRoot": "libs/data/src",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"libs/data/tsconfig.lib.json",
+							"libs/data/tsconfig.spec.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/data/jest.config.js",
+						"tsConfig": "libs/data/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"ui-components": {
+			"projectType": "library",
+			"root": "libs/ui-components",
+			"sourceRoot": "libs/ui-components/src",
+			"prefix": "ss",
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"libs/ui-components/tsconfig.lib.json",
+							"libs/ui-components/tsconfig.spec.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/ui-components/jest.config.js",
+						"tsConfig": "libs/ui-components/tsconfig.spec.json",
+						"setupFile": "libs/ui-components/src/test-setup.ts"
+					}
+				}
+			},
+			"schematics": {
+				"@nrwl/angular:component": {
+					"styleext": "scss"
+				}
+			}
+		}
+	},
+	"cli": {
+		"warnings": {
+			"typescriptMismatch": false,
+			"versionMismatch": false
+		},
+		"defaultCollection": "@nrwl/angular"
+	},
+	"schematics": {
+		"@nrwl/angular:application": {
+			"unitTestRunner": "jest",
+			"e2eTestRunner": "cypress"
+		},
+		"@nrwl/angular:library": {
+			"unitTestRunner": "jest"
+		}
+	},
+	"defaultProject": "shipping"
 }
