@@ -1,12 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import {
+	TranslateModule,
+	TranslateService
+} from '@ngx-translate/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [RouterTestingModule],
-			declarations: [AppComponent]
+			imports: [TranslateModule.forRoot()],
+			declarations: [AppComponent],
+			providers: [TranslateService],
+			schemas: [NO_ERRORS_SCHEMA]
 		}).compileComponents();
 	}));
 
