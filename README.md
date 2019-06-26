@@ -77,6 +77,14 @@ code between FE and BE apps there is a lintable & testable `data` library, locat
 
 Configuration for browser compatibility are set in package.json in `"browserslist"`. Current options are to support `last 2 versions` of browsers with `> 1%` share.
 
+## Budgets
+
+Custom budgets for the entire `shipping` app size are set to the following options in `angular.json`:
+
+- `baseline` = 750kb
+- `maximumWarning` = 200kb
+- `maximumError` = 400kb
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
