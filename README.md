@@ -73,6 +73,10 @@ code between FE and BE apps there is a lintable & testable `data` library, locat
 - to lint data library run `ng lint data`
 - to test data library run `ng test data`
 
+## Browser compatibility
+
+Configuration for browser compatibility are set in package.json in `"browserslist"`. Current options are to support `last 2 versions` of browsers with `> 1%` share.
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
