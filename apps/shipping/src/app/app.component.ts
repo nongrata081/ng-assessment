@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExampleSharedEntity } from '@ss/data';
 
 @Component({
 	selector: 'ship-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'shipping';
+	someProperty: ExampleSharedEntity;
 }
