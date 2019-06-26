@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { UiComponentsModule } from '@ss/ui-components';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
 		RouterModule.forRoot([], {
 			initialNavigation: 'enabled'
 		}),
-		RouterModule
+		RouterModule,
+		UiComponentsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
