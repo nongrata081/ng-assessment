@@ -122,7 +122,7 @@
 		"hooks": {
 			"pre-commit": "run-s prettify-staged lint",
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-push": "run-s enforce:gitflow prettify lint test"
+			"pre-push": "run-s enforce:gitflow prettify lint test e2e"
 		}
 	},
 	"commitlint": {
