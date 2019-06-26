@@ -1,5 +1,19 @@
 # NgAssessment
 
+## Consistent code style
+
+Consistent code style is enforced with [Prettier](https://prettier.io/).
+
+Settings are available in `.prettierignore` & `.prettierrc`
+
+To prettify the codebase manually, run `npm run prettify`
+
+Executed automatically on:
+
+- `pre-commit`
+- `pre-push`
+- in `ci`
+
 ## Application shell
 
 Run `npm run build:shell` to build the shipping angular app with app shell.
