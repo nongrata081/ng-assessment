@@ -36,6 +36,12 @@ to contain rendered contents of `apps/shipping/src/app/app-shell/`.
 
 For profiling open the shipping app in chrome and in `Performance` tab hit `Shift + Cmd + E`.
 
+## HMR
+
+In order to start the `shipping` front-end app with hot module replacement enabled, run `npm run shipping:hmr`
+
+The web-page will reflect occurring changes in the code without live-reload (page refresh).
+
 ## SSR
 
 To verify that SSR works, run:
