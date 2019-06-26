@@ -19,7 +19,7 @@
 		"build:client-and-server-bundles": "ng build --prod && ng run shipping:server:production",
 		"ssr": "npm run build:ssr && npm run serve:ssr",
 		"build:shell": "ng run shipping:app-shell",
-    "test:coverage": "ng test --code-coverage",
+		"test:coverage": "ng test --code-coverage",
 		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NX ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~": "",
 		"ng": "ng",
 		"start": "ng serve",
@@ -62,6 +62,8 @@
 		"@nestjs/platform-express": "^6.0.0",
 		"@nguniversal/express-engine": "^7.0.0",
 		"@nguniversal/module-map-ngfactory-loader": "^7.0.0",
+		"@ngx-translate/core": "^11.0.1",
+		"@ngx-translate/http-loader": "^4.0.0",
 		"@nrwl/angular": "^8.1.2",
 		"core-js": "^2.5.4",
 		"reflect-metadata": "^0.1.13",
@@ -128,8 +130,8 @@
 			"@commitlint/config-conventional"
 		]
 	},
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	]
 }
