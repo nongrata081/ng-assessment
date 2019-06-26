@@ -1,6 +1,6 @@
 {
 	"name": "ng-assessment",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"license": "MIT",
 	"scripts": {
 		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Custom dev flow ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~": "",
@@ -45,10 +45,6 @@
 	},
 	"private": true,
 	"dependencies": {
-		"@nestjs/common": "^6.0.0",
-		"@nestjs/core": "^6.0.0",
-		"@nestjs/platform-express": "^6.0.0",
-		"reflect-metadata": "^0.1.13",
 		"@angular/animations": "^8.0.0",
 		"@angular/common": "^8.0.0",
 		"@angular/compiler": "^8.0.0",
@@ -58,16 +54,19 @@
 		"@angular/platform-browser-dynamic": "^8.0.0",
 		"@angular/platform-server": "^8.0.0",
 		"@angular/router": "^8.0.0",
+		"@nestjs/common": "^6.0.0",
+		"@nestjs/core": "^6.0.0",
 		"@nestjs/ng-universal": "^1.1.1",
+		"@nestjs/platform-express": "^6.0.0",
 		"@nguniversal/express-engine": "^7.0.0",
 		"@nguniversal/module-map-ngfactory-loader": "^7.0.0",
 		"@nrwl/angular": "^8.1.2",
 		"core-js": "^2.5.4",
+		"reflect-metadata": "^0.1.13",
 		"rxjs": "~6.4.0",
 		"zone.js": "^0.9.1"
 	},
 	"devDependencies": {
-		"jest-preset-angular": "^7.1.1",
 		"@angular-devkit/build-angular": "^0.800.0",
 		"@angular/cli": "8.0.0",
 		"@angular/compiler-cli": "^8.0.0",
@@ -94,6 +93,7 @@
 		"enforce-gitflow-branches": "latest",
 		"husky": "latest",
 		"jest": "24.1.0",
+		"jest-preset-angular": "^7.1.1",
 		"nodemon": "^1.18.11",
 		"npm-run-all": "^4.1.5",
 		"prettier": "1.16.4",
@@ -117,8 +117,8 @@
 		"hooks": {
 			"pre-commit": "run-s prettify-staged lint",
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "run-s enforce:gitflow prettify lint"
-    }
+			"pre-push": "run-s enforce:gitflow prettify lint"
+		}
 	},
 	"commitlint": {
 		"extends": [
