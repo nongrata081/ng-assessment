@@ -113,6 +113,13 @@ Build the app
 
 Publish to gh `ngh`
 
+## Dependency graph
+
+Run `npm run dep-graph` to generate & open the graph of dependencies in the workspace.
+
+Run `npm run affected:dep-graph` to see the graph of affected entities in the app
+(since retesting & rebuilding everything always will not be scalable and will take too much time).
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
@@ -189,10 +196,6 @@ Run `npm run affected:test` to execute the unit tests affected by a change.
 Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 Run `npm run affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `npm run dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 
