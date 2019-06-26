@@ -1,3 +1,18 @@
+<a name="0.3.0"></a>
+
+# [0.3.0](https://github.com/nongrata081/ng-assessment/compare/v0.2.0...v0.3.0) (2019-06-26)
+
+### Features
+
+- **browser-compatibility:** setup browser compat config in package.json ([5fbe789](https://github.com/nongrata081/ng-assessment/commit/5fbe789)), closes [#61](https://github.com/nongrata081/ng-assessment/issues/61)
+- **e2e-tests-hooks:** run e2e tests on pre-push ([1ece5f6](https://github.com/nongrata081/ng-assessment/commit/1ece5f6)), closes [#13](https://github.com/nongrata081/ng-assessment/issues/13)
+- **fake-rest-api:** add mocked backend from json file via json-server ([1845562](https://github.com/nongrata081/ng-assessment/commit/1845562)), closes [#45](https://github.com/nongrata081/ng-assessment/issues/45)
+- **fe-shipping-budgets:** add budgets for shipping ng app ([d62d116](https://github.com/nongrata081/ng-assessment/commit/d62d116)), closes [#17](https://github.com/nongrata081/ng-assessment/issues/17)
+- **hot-module-replacement:** add hmr to ng shipping app ([d5fa45b](https://github.com/nongrata081/ng-assessment/commit/d5fa45b)), closes [#10](https://github.com/nongrata081/ng-assessment/issues/10)
+- **i18n:** add i81n with ngx-translate to shipping app ([cec4405](https://github.com/nongrata081/ng-assessment/commit/cec4405)), closes [#31](https://github.com/nongrata081/ng-assessment/issues/31)
+- **unit-tests-coverage:** setup coverage scripts, thresholds, reports ([fbb420e](https://github.com/nongrata081/ng-assessment/commit/fbb420e)), closes [#15](https://github.com/nongrata081/ng-assessment/issues/15)
+- **unit-tests-hooks:** run unit tests for apps & libs on pre-push ([4db19f0](https://github.com/nongrata081/ng-assessment/commit/4db19f0)), closes [#11](https://github.com/nongrata081/ng-assessment/issues/11)
+
 <a name="0.2.0"></a>
 
 # [0.2.0](https://github.com/nongrata081/ng-assessment/compare/v0.1.0...v0.2.0) (2019-06-26)

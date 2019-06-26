@@ -1,6 +1,6 @@
 {
 	"name": "ng-assessment",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"license": "MIT",
 	"scripts": {
 		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Custom dev flow ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~": "",
@@ -11,7 +11,7 @@
 		"recommended:bump": "conventional-recommended-bump --preset=angular",
 		"generate:changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
 		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Custom app scripts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~": "",
-    "fake:rest:api": "./node_modules/json-server/lib/cli/bin.js --watch endpoints.json",
+		"fake:rest:api": "./node_modules/json-server/lib/cli/bin.js --watch endpoints.json",
 		"shipping:hmr": "ng serve shipping --configuration hmr",
 		"serve": "node apps/shipping/serve-script",
 		"compile:server": "webpack --config apps/shipping-backend/webpack.server.config.js --progress --colors",
