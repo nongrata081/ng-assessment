@@ -1,5 +1,15 @@
 # NgAssessment
 
+## Fake REST API
+
+Mocked backed is implemented with [json-server](https://github.com/typicode/json-server).
+
+Creates rest endpoints from a json-config at `fake-rest-api/endpoints.json`
+
+Run `npm run fake:rest:api` to create a server.
+
+Server portal with resource description is available at http://localhost:3000
+
 ## Linting
 
 To lint all apps & libs run `npm run lint`
@@ -13,6 +23,42 @@ To lint apps & libs separately run either of following:
 - `ng lint ui-components`
 
 Linting of all apps & libs is done automatically on `pre-commit` and `pre-push`
+
+## Unit tests
+
+To unit test all apps & libs via [Jest](https://jestjs.io) run `npm run test`. By default if no tests are specified for app / lib it will pass.
+
+- `ng test shipping`
+- `ng test shipping-e2e`
+- `ng test shipping-backend`
+- `ng test data`
+- `ng test ui-components`
+
+Unit testing of all apps & libs is done automatically on `pre-push`.
+
+Run `npm run affected:test` to execute the unit tests affected by a change.
+
+## Coverage
+
+In order to test coverage of all apps & libs run `npm run test:coverage`
+Results are available in `coverage/` dir in root.
+
+Coverage is checked while unit-testing the app in `pre-push` (will fail if unit tests don't meet coverage thresholds).
+
+Coverage thresholds are setup in `jest.config.js` :
+
+- branches: 100
+- functions: 100
+- lines: 100
+- statements: -10
+
+## E2E tests
+
+Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+
+Run `npm run affected:e2e` to execute the end-to-end tests affected by a change.
+
+By default e2e tests are automatically run on `pre-push`.
 
 ## Consistent code style
 
@@ -35,6 +81,16 @@ To verify that app shell was built successfully check the contents of `dist/apps
 to contain rendered contents of `apps/shipping/src/app/app-shell/`.
 
 For profiling open the shipping app in chrome and in `Performance` tab hit `Shift + Cmd + E`.
+
+## HMR
+
+In order to start the `shipping` front-end app with hot module replacement enabled, run `npm run shipping:hmr`
+
+The web-page will reflect occurring changes in the code without live-reload (page refresh).
+
+## Build
+
+Run `ng build <project>` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## SSR
 
@@ -66,6 +122,39 @@ code between FE and BE apps there is a lintable & testable `data` library, locat
 
 - to lint data library run `ng lint data`
 - to test data library run `ng test data`
+
+## Browser compatibility
+
+Configuration for browser compatibility are set in package.json in `"browserslist"`. Current options are to support `last 2 versions` of browsers with `> 1%` share.
+
+## Budgets
+
+Custom budgets for the entire `shipping` app size are set to the following options in `angular.json`:
+
+- `baseline` = 750kb
+- `maximumWarning` = 200kb
+- `maximumError` = 400kb
+
+## Deploy to gh-pages
+
+Deployed app will be available at https://nongrata081.github.io/ng-assessment/
+
+In order to deploy to gh-pages make sure that in `dist/` directory root built bundles with `index.html` are present.
+
+Install angular-cli-ghpages
+`npm i -g angular-cli-ghpages`
+
+Build the app
+`ng build prod`
+
+Publish to gh `ngh`
+
+## Dependency graph
+
+Run `npm run dep-graph` to generate & open the graph of dependencies in the workspace.
+
+Run `npm run affected:dep-graph` to see the graph of affected entities in the app
+(since retesting & rebuilding everything always will not be scalable and will take too much time).
 
 ---
 
@@ -127,26 +216,6 @@ Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The 
 ## Code scaffolding
 
 Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `npm run affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `npm run affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `npm run dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 

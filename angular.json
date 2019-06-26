@@ -51,6 +51,20 @@
 									"type": "initial",
 									"maximumWarning": "2mb",
 									"maximumError": "5mb"
+								},
+								{
+									"type": "all",
+									"baseline": "750kb",
+									"maximumWarning": "200kb",
+									"maximumError": "400kb"
+								}
+							]
+						},
+						"hmr": {
+							"fileReplacements": [
+								{
+									"replace": "apps/shipping/src/environments/environment.ts",
+									"with": "apps/shipping/src/environments/environment.hmr.ts"
 								}
 							]
 						}
@@ -64,6 +78,11 @@
 					"configurations": {
 						"production": {
 							"browserTarget": "shipping:build:production"
+						},
+						"hmr": {
+							"hmr": true,
+							"browserTarget": "shipping:build:hmr",
+							"hmrWarning": false
 						}
 					}
 				},
