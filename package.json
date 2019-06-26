@@ -24,7 +24,7 @@
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
-		"test": "ng test",
+		"test": "ng test --passWithNoTests",
 		"lint": "nx lint && ng lint",
 		"e2e": "ng e2e",
 		"affected:apps": "nx affected:apps",
@@ -122,7 +122,7 @@
 		"hooks": {
 			"pre-commit": "run-s prettify-staged lint",
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-push": "run-s enforce:gitflow prettify lint"
+			"pre-push": "run-s enforce:gitflow prettify lint test"
 		}
 	},
 	"commitlint": {
