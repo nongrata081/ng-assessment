@@ -16,6 +16,9 @@
 		},
 		"shipping-backend": {
 			"tags": []
+		},
+		"data": {
+			"tags": []
 		}
 	}
 }
