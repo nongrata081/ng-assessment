@@ -1,5 +1,20 @@
 # NgAssessment
 
+## SSR
+
+To verify that SSR works, run:
+
+- `npm run ssr` to build client and server and serve with server-side rendering
+  - UI at http://localhost:4000/
+  - API at http://localhost:4000/api
+- `curl http://localhost:4000/ > shipping.html` that will put all the contents of the retrieved html file
+via http request to **curl.html** in the root.
+
+All contents of the app component will be rendered to retrieved html file. If you do the same with
+`npm run start` the retrieved html file will only contain `<app-root></app-root>` element but not its content.
+
+---
+
 This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
