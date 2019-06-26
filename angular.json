@@ -26,17 +26,17 @@
               "apps/shipping/src/favicon.ico",
               "apps/shipping/src/assets"
             ],
-            "styles": ["apps/shipping/src/styles.scss"],
+            "styles": [
+              "apps/shipping/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/shipping/src/environments/environment.ts",
-                  "with": "apps/shipping/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "apps/shipping/src/environments/environment.ts",
+                "with": "apps/shipping/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -46,13 +46,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -80,7 +78,9 @@
               "apps/shipping/tsconfig.app.json",
               "apps/shipping/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -89,6 +89,22 @@
             "jestConfig": "apps/shipping/jest.config.js",
             "tsConfig": "apps/shipping/tsconfig.spec.json",
             "setupFile": "apps/shipping/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/shipping-backend",
+            "main": "apps/shipping/src/main.server.ts",
+            "tsConfig": "apps/shipping/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [{
+                "replace": "apps/shipping/src/environments/environment.ts",
+                "with": "apps/shipping/src/environments/environment.prod.ts"
+              }]
+            }
           }
         }
       }
@@ -115,6 +131,62 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/shipping-e2e/tsconfig.e2e.json"
+          }
+        }
+      }
+    },
+    "shipping-backend": {
+      "root": "apps/shipping-backend",
+      "sourceRoot": "apps/shipping-backend/src",
+      "projectType": "application",
+      "prefix": "shipping-backend",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/shipping-backend",
+            "main": "apps/shipping-backend/src/main.ts",
+            "tsConfig": "apps/shipping-backend/tsconfig.app.json",
+            "assets": [
+              "apps/shipping-backend/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [{
+                "replace": "apps/shipping-backend/src/environments/environment.ts",
+                "with": "apps/shipping-backend/src/environments/environment.prod.ts"
+              }]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "shipping-backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/shipping-backend/tsconfig.app.json",
+              "apps/shipping-backend/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/shipping-backend/jest.config.js",
+            "tsConfig": "apps/shipping-backend/tsconfig.spec.json"
           }
         }
       }
