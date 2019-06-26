@@ -106,6 +106,20 @@
               }]
             }
           }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "shipping:build",
+            "serverTarget": "shipping:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "shipping:build:production",
+              "serverTarget": "shipping:server:production"
+            }
+          }
         }
       }
     },
