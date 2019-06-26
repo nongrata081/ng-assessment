@@ -85,6 +85,20 @@ Custom budgets for the entire `shipping` app size are set to the following optio
 - `maximumWarning` = 200kb
 - `maximumError` = 400kb
 
+## Deploy to gh-pages
+
+Deployed app will be available at https://nongrata081.github.io/ng-assessment/
+
+In order to deploy to gh-pages make sure that in `dist/` directory root built bundles with `index.html` are present.
+
+Install angular-cli-ghpages
+`npm i -g angular-cli-ghpages`
+
+Build the app
+`ng build prod`
+
+Publish to gh `ngh`
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
