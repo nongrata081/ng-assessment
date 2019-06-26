@@ -1,21 +1,21 @@
 {
-  "npmScope": "ss",
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": "*",
-    "tsconfig.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
-  },
-  "projects": {
-    "shipping-e2e": {
-      "tags": []
-    },
-    "shipping": {
-      "tags": []
-    },
-    "shipping-backend": {
-      "tags": []
-    }
-  }
+	"npmScope": "ss",
+	"implicitDependencies": {
+		"angular.json": "*",
+		"package.json": "*",
+		"tsconfig.json": "*",
+		"tslint.json": "*",
+		"nx.json": "*"
+	},
+	"projects": {
+		"shipping-e2e": {
+			"tags": []
+		},
+		"shipping": {
+			"tags": []
+		},
+		"shipping-backend": {
+			"tags": []
+		}
+	}
 }
