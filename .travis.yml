@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - '10.15.3'
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+before_install:
+  - export NG_CLI_ANALYTICS=ci
+  - npm i -g @angular/cli
+  - ng analytics off
+
+before_script:
+  - 'set -e'
+  - npm i
+
+cache: npm
+
+script:
+  - commitlint-travis
+  - npm run lint
+  - npm run test
+  - npm run e2e
