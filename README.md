@@ -42,6 +42,14 @@ Coverage thresholds are setup in `jest.config.js` :
 - lines: 100
 - statements: -10
 
+## E2E tests
+
+Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+
+Run `npm run affected:e2e` to execute the end-to-end tests affected by a change.
+
+By default e2e tests are automatically run on `pre-push`.
+
 ## Consistent code style
 
 Consistent code style is enforced with [Prettier](https://prettier.io/).
@@ -198,12 +206,6 @@ Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The 
 ## Code scaffolding
 
 Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `npm run affected:e2e` to execute the end-to-end tests affected by a change.
 
 ## Further help
 
