@@ -115,10 +115,10 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "run-s prettify-staged",
-			"pre-push": "npm run enforce:gitflow && npm run prettify",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-		}
+			"pre-commit": "run-s prettify-staged lint",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "run-s enforce:gitflow prettify lint"
+    }
 	},
 	"commitlint": {
 		"extends": [

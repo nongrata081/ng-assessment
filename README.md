@@ -1,5 +1,19 @@
 # NgAssessment
 
+## Linting
+
+To lint all apps & libs run `npm run lint`
+
+To lint apps & libs separately run either of following:
+
+- `ng lint shipping`
+- `ng lint shipping-e2e`
+- `ng lint shipping-backend`
+- `ng lint data`
+- `ng lint ui-components`
+
+Linting of all apps & libs is done automatically on `pre-commit` and `pre-push`
+
 ## Consistent code style
 
 Consistent code style is enforced with [Prettier](https://prettier.io/).
