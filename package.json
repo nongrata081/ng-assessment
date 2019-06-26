@@ -19,6 +19,7 @@
 		"build:client-and-server-bundles": "ng build --prod && ng run shipping:server:production",
 		"ssr": "npm run build:ssr && npm run serve:ssr",
 		"build:shell": "ng run shipping:app-shell",
+    "test:coverage": "ng test --code-coverage",
 		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NX ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~": "",
 		"ng": "ng",
 		"start": "ng serve",
