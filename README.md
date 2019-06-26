@@ -1,11 +1,12 @@
 # NgAssessment
 
 ## Application shell
+
 Run `npm run build:shell` to build the shipping angular app with app shell.
 To verify that app shell was built successfully check the contents of `dist/apps/shipping/index.html`
 to contain rendered contents of `apps/shipping/src/app/app-shell/`.
 
-For profiling open the shipping app in chrome and in `Performance` tab hit `Shift + Cmd + E`. 
+For profiling open the shipping app in chrome and in `Performance` tab hit `Shift + Cmd + E`.
 
 ## SSR
 
@@ -15,7 +16,7 @@ To verify that SSR works, run:
   - UI at http://localhost:4000/
   - API at http://localhost:4000/api
 - `curl http://localhost:4000/ > shipping.html` that will put all the contents of the retrieved html file
-via http request to **curl.html** in the root.
+  via http request to **curl.html** in the root.
 
 All contents of the app component will be rendered to retrieved html file. If you do the same with
 `npm run start` the retrieved html file will only contain `<app-root></app-root>` element but not its content.
