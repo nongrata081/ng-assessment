@@ -173,6 +173,15 @@ Run `npm run affected:dep-graph` to see the graph of affected entities in the ap
 
 `npm run analyze:bundle:es2015` to use webpack-bundle-analyzer for es2015 bundle stats
 
+## Styleguide / UI components library app
+
+Is implemented with [Storybook](https://github.com/storybookjs/storybook).
+
+Config files available at `.storybook/`
+
+`npm run storybook` to run the app
+`npm run build-storybook` to build static files, output dir by default `storybook-static/`
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
