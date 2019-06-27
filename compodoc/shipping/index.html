@@ -1,0 +1,286 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-assessment documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ng-assessment documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="ngassessment">NgAssessment</h1>
+<h2 id="fake-rest-api">Fake REST API</h2>
+<p>Mocked backed is implemented with <a href="https://github.com/typicode/json-server">json-server</a>.</p>
+<p>Creates rest endpoints from a json-config at <code>fake-rest-api/endpoints.json</code></p>
+<p>Run <code>npm run fake:rest:api</code> to create a server.</p>
+<p>Server portal with resource description is available at http://localhost:3000</p>
+<h2 id="linting">Linting</h2>
+<p>To lint all apps &amp; libs run <code>npm run lint</code></p>
+<p>To lint apps &amp; libs separately run either of following:</p>
+<ul>
+<li><code>ng lint shipping</code></li>
+<li><code>ng lint shipping-e2e</code></li>
+<li><code>ng lint shipping-backend</code></li>
+<li><code>ng lint data</code></li>
+<li><code>ng lint ui-components</code></li>
+</ul>
+<p>Linting of all apps &amp; libs is done automatically on <code>pre-commit</code> and <code>pre-push</code></p>
+<h2 id="unit-tests">Unit tests</h2>
+<p>To unit test all apps &amp; libs via <a href="https://jestjs.io">Jest</a> run <code>npm run test</code>. By default if no tests are specified for app / lib it will pass.</p>
+<ul>
+<li><code>ng test shipping</code></li>
+<li><code>ng test shipping-e2e</code></li>
+<li><code>ng test shipping-backend</code></li>
+<li><code>ng test data</code></li>
+<li><code>ng test ui-components</code></li>
+</ul>
+<p>Unit testing of all apps &amp; libs is done automatically on <code>pre-push</code>.</p>
+<p>Run <code>npm run affected:test</code> to execute the unit tests affected by a change.</p>
+<h2 id="coverage">Coverage</h2>
+<p>In order to test coverage of all apps &amp; libs run <code>npm run test:coverage</code>
+Results are available in <code>coverage/</code> dir in root.</p>
+<p>Coverage is checked while unit-testing the app in <code>pre-push</code> (will fail if unit tests don&#39;t meet coverage thresholds).</p>
+<p>Coverage thresholds are setup in <code>jest.config.js</code> :</p>
+<ul>
+<li>branches: 100</li>
+<li>functions: 100</li>
+<li>lines: 100</li>
+<li>statements: -10</li>
+</ul>
+<h2 id="e2e-tests">E2E tests</h2>
+<p>Run <code>ng e2e my-app</code> to execute the end-to-end tests via <a href="https://www.cypress.io">Cypress</a>.</p>
+<p>Run <code>npm run affected:e2e</code> to execute the end-to-end tests affected by a change.</p>
+<p>By default e2e tests are automatically run on <code>pre-push</code>.</p>
+<h2 id="consistent-code-style">Consistent code style</h2>
+<p>Consistent code style is enforced with <a href="https://prettier.io/">Prettier</a>.</p>
+<p>Settings are available in <code>.prettierignore</code> &amp; <code>.prettierrc</code></p>
+<p>To prettify the codebase manually, run <code>npm run prettify</code></p>
+<p>Executed automatically on:</p>
+<ul>
+<li><code>pre-commit</code></li>
+<li><code>pre-push</code></li>
+<li>in <code>ci</code></li>
+</ul>
+<h2 id="application-shell">Application shell</h2>
+<p>Run <code>npm run build:shell</code> to build the shipping angular app with app shell.
+To verify that app shell was built successfully check the contents of <code>dist/apps/shipping/index.html</code>
+to contain rendered contents of <code>apps/shipping/src/app/app-shell/</code>.</p>
+<p>For profiling open the shipping app in chrome and in <code>Performance</code> tab hit <code>Shift + Cmd + E</code>.</p>
+<h2 id="hmr">HMR</h2>
+<p>In order to start the <code>shipping</code> front-end app with hot module replacement enabled, run <code>npm run shipping:hmr</code></p>
+<p>The web-page will reflect occurring changes in the code without live-reload (page refresh).</p>
+<h2 id="build">Build</h2>
+<p>Run <code>ng build &lt;project&gt;</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
+<h2 id="ssr">SSR</h2>
+<p>To verify that SSR works, run:</p>
+<ul>
+<li><code>npm run ssr</code> to build client and server and serve with server-side rendering<ul>
+<li>UI at http://localhost:4000/</li>
+<li>API at http://localhost:4000/api</li>
+</ul>
+</li>
+<li><code>curl http://localhost:4000/ &gt; shipping.html</code> that will put all the contents of the retrieved html file
+via http request to <strong>curl.html</strong> in the root.</li>
+</ul>
+<p>All contents of the app component will be rendered to retrieved html file. If you do the same with
+<code>npm run start</code> the retrieved html file will only contain <code>&lt;app-root&gt;&lt;/app-root&gt;</code> element but not its content.</p>
+<h2 id="shared-ui-components-library">Shared UI-components library</h2>
+<p>Multiple front-end apps might be consuming reusable shared UI-components. Reusing shared UI-components with
+well-defined APIs will make development and delivery of domain related value easier &amp; faster. Thus shared
+UI-components should be placed into <code>ui-components</code> library, located at <code>libs/ui-components</code>.</p>
+<ul>
+<li>to lint data library run <code>ng lint ui-components</code></li>
+<li>to test data library run <code>ng test ui-components</code></li>
+</ul>
+<h2 id="shared-data-library">Shared data library</h2>
+<p>Front-end and back-end apps should use as much shared code, as possible, in order to prevent diverging of the code
+for same entities in FE and BE, which will make the entire app more error-prone eventually. Thus for keeping shared
+code between FE and BE apps there is a lintable &amp; testable <code>data</code> library, located at <code>libs/data</code>.</p>
+<ul>
+<li>to lint data library run <code>ng lint data</code></li>
+<li>to test data library run <code>ng test data</code></li>
+</ul>
+<h2 id="browser-compatibility">Browser compatibility</h2>
+<p>Configuration for browser compatibility are set in package.json in <code>&quot;browserslist&quot;</code>. Current options are to support <code>last 2 versions</code> of browsers with <code>&gt; 1%</code> share.</p>
+<h2 id="budgets">Budgets</h2>
+<p>Custom budgets for the entire <code>shipping</code> app size are set to the following options in <code>angular.json</code>:</p>
+<ul>
+<li><code>baseline</code> = 750kb</li>
+<li><code>maximumWarning</code> = 200kb</li>
+<li><code>maximumError</code> = 400kb</li>
+</ul>
+<h2 id="deploy-to-gh-pages">Deploy to gh-pages</h2>
+<p>Deployed app will be available at https://nongrata081.github.io/ng-assessment/</p>
+<p>In order to deploy to gh-pages make sure that in <code>dist/</code> directory root built bundles with <code>index.html</code> are present.</p>
+<p>Install angular-cli-ghpages
+<code>npm i -g angular-cli-ghpages</code></p>
+<p>Build the app
+<code>ng build prod</code></p>
+<p>Publish to gh <code>ngh</code></p>
+<h2 id="dependency-graph">Dependency graph</h2>
+<p>Run <code>npm run dep-graph</code> to generate &amp; open the graph of dependencies in the workspace.</p>
+<p>Run <code>npm run affected:dep-graph</code> to see the graph of affected entities in the app
+(since retesting &amp; rebuilding everything always will not be scalable and will take too much time).</p>
+<h2 id="cicd">CI/CD</h2>
+<p><code>.travis.yml</code> has next steps for travis ci:</p>
+<ul>
+<li>commit lint</li>
+<li>lint</li>
+<li>unit test</li>
+<li>e2e</li>
+</ul>
+<h2 id="bundle-analyze">Bundle analyze</h2>
+<p><code>npm run build:stats</code> to build the shipping app with stats.json files for es5 &amp; es2015</p>
+<p><code>npm run analyze:bundle:es5</code> to use webpack-bundle-analyzer for es5 bundle stats</p>
+<p><code>npm run analyze:bundle:es2015</code> to use webpack-bundle-analyzer for es2015 bundle stats</p>
+<h2 id="styleguide--ui-components-library-app">Styleguide / UI components library app</h2>
+<p>Is implemented with <a href="https://github.com/storybookjs/storybook">Storybook</a>.</p>
+<p>Config files available at <code>.storybook/</code></p>
+<p><code>npm run storybook</code> to run the app
+<code>npm run build-storybook</code> to build static files, output dir by default <code>storybook-static/</code></p>
+<hr>
+<p>This project was generated using <a href="https://nx.dev">Nx</a>.</p>
+<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+
+<p>🔎 <strong>Nx is a set of Angular CLI power-ups for modern development.</strong></p>
+<h2 id="quick-start--documentation">Quick Start &amp; Documentation</h2>
+<p><a href="https://nx.dev">Nx Documentation</a></p>
+<p><a href="https://nx.dev/getting-started/what-is-nx">30-minute video showing all Nx features</a></p>
+<p><a href="https://nx.dev/tutorial/01-create-application">Interactive Tutorial</a></p>
+<h2 id="adding-capabilities-to-your-workspace">Adding capabilities to your workspace</h2>
+<p>Nx supports many plugins which add capabilities for developing different types of applications and different tools.</p>
+<p>These capabilities include generating applications, libraries, .etc as well as the devtools to test, and build projects as well.</p>
+<p>Below are some plugins which you can add to your workspace:</p>
+<ul>
+<li><a href="https://angular.io">Angular</a><ul>
+<li><code>ng add @nrwl/angular</code></li>
+</ul>
+</li>
+<li><a href="https://reactjs.org">React</a><ul>
+<li><code>ng add @nrwl/react</code></li>
+</ul>
+</li>
+<li>Web (no framework frontends)<ul>
+<li><code>ng add @nrwl/web</code></li>
+</ul>
+</li>
+<li><a href="https://nestjs.com">Nest</a><ul>
+<li><code>ng add @nrwl/nest</code></li>
+</ul>
+</li>
+<li><a href="https://expressjs.com">Express</a><ul>
+<li><code>ng add @nrwl/express</code></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org">Node</a><ul>
+<li><code>ng add @nrwl/node</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="generate-an-application">Generate an application</h2>
+<p>Run <code>ng g @nrwl/angular:app my-app</code> to generate an application.</p>
+<blockquote>
+<p>You can use any of the plugins above to generate applications as well.</p>
+</blockquote>
+<p>When using Nx, you can create multiple applications and libraries in the same workspace.</p>
+<h2 id="generate-a-library">Generate a library</h2>
+<p>Run <code>ng g @nrwl/angular:lib my-lib</code> to generate a library.</p>
+<blockquote>
+<p>You can also use any of the plugins above to generate libraries as well.</p>
+</blockquote>
+<p>Libraries are sharable across libraries and applications. They can be imported from <code>@ng-assessment/mylib</code>.</p>
+<h2 id="development-server">Development server</h2>
+<p>Run <code>ng serve my-app</code> for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.</p>
+<h2 id="code-scaffolding">Code scaffolding</h2>
+<p>Run <code>ng g component my-component --project=my-app</code> to generate a new component.</p>
+<h2 id="further-help">Further help</h2>
+<p>Visit the <a href="https://nx.dev">Nx Documentation</a> to learn more.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
