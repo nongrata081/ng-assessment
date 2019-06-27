@@ -3,3 +3,4 @@ package.json
 tslint.json
 tsconfig.json
 dist
+storybook-static
