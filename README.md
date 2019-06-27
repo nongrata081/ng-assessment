@@ -1,5 +1,9 @@
 # NgAssessment
 
+## Guidelines for monorepo
+
+[Enterprise angular monorepo patterns](enterprise-angular-mono-repo-patterns.pdf)
+
 ## Fake REST API
 
 Mocked backed is implemented with [json-server](https://github.com/typicode/json-server).
