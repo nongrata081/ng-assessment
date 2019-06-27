@@ -3,3 +3,8 @@ package.json
 tslint.json
 tsconfig.json
 dist
+storybook-static
+compodoc
+lighthouse
+backstop_data
+a11y
