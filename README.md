@@ -182,6 +182,16 @@ Config files available at `.storybook/`
 `npm run storybook` to run the app
 `npm run build-storybook` to build static files, output dir by default `storybook-static/`
 
+## Compodoc
+
+Generation of static documentation for apps is implemented with [compodoc](https://compodoc.app/).
+
+`npm run compodoc:shipping` to generate docs for `shipping` ng app
+
+`npm run compodoc:shipping-backend` to generate docs for `shipping-backend` nest app
+
+Generated docs are stored in `compodoc/`
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
