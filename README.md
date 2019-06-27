@@ -216,6 +216,22 @@ Is implemented with [backstopjs](https://github.com/garris/BackstopJS)
 
 `npm run backstop:open:latest` to open latest test report (stored in `backstop_data/html_report`)
 
+## Accessibility testing
+
+Is implemented with [pa11y](https://github.com/pa11y/pa11y).
+
+`npm run a11y:test` to test http://localhost:4000/ and generate html report in `a11y/`
+
+Exit codes:
+
+`0` - Pa11y ran successfully, and there are no errors
+
+`1` - Pa11y failed run due to a technical fault
+
+`2` - Pa11y ran successfully but there are errors in the page
+
+Make sure to have the app served on :4000 before running a11y test
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
