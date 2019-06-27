@@ -202,6 +202,20 @@ Auditing for web performance and best practice metrics is implemented via [Light
 
 Generated reports will open after running scripts & are stored in `lighthouse/`
 
+## Visual regression testing
+
+Is implemented with [backstopjs](https://github.com/garris/BackstopJS)
+
+`npm run backstop:reference` to create reference images (stored in `backstop_data/bitmaps_reference`)
+
+`npm run backstop:test` to test current app against reference images (stored in `backstop_data/bitmaps_test`)
+
+`npm run backstop:test:ci` to test in CI without opening browser report (stored in `backstop_data/ci_test`)
+
+`npm run backstop:approve` to approve tested images
+
+`npm run backstop:open:latest` to open latest test report (stored in `backstop_data/html_report`)
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
