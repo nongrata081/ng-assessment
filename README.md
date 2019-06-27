@@ -182,7 +182,7 @@ Config files available at `.storybook/`
 `npm run storybook` to run the app
 `npm run build-storybook` to build static files, output dir by default `storybook-static/`
 
-## Compodoc
+## App's documentation
 
 Generation of static documentation for apps is implemented with [compodoc](https://compodoc.app/).
 
@@ -191,6 +191,16 @@ Generation of static documentation for apps is implemented with [compodoc](https
 `npm run compodoc:shipping-backend` to generate docs for `shipping-backend` nest app
 
 Generated docs are stored in `compodoc/`
+
+## Performance
+
+Auditing for web performance and best practice metrics is implemented via [Lighthouse](https://github.com/GoogleChrome/lighthouse).
+
+`npm run lighthouse:mobile` for mobile report
+
+`npm run lighthouse:desktop` for desktop report
+
+Generated reports will open after running scripts & are stored in `lighthouse/`
 
 ---
 
