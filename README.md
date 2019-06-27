@@ -165,6 +165,14 @@ Run `npm run affected:dep-graph` to see the graph of affected entities in the ap
 - unit test
 - e2e
 
+## Bundle analyze
+
+`npm run build:stats` to build the shipping app with stats.json files for es5 & es2015
+
+`npm run analyze:bundle:es5` to use webpack-bundle-analyzer for es5 bundle stats
+
+`npm run analyze:bundle:es2015` to use webpack-bundle-analyzer for es2015 bundle stats
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
