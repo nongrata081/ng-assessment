@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { UiComponentsModule } from '@ss/ui-components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@ss/material';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -17,8 +18,9 @@ import { MaterialModule } from '@ss/material';
 			initialNavigation: 'enabled'
 		}),
 		RouterModule,
-		UiComponentsModule,
-		MaterialModule
+		MaterialModule,
+		MDBBootstrapModule.forRoot(),
+		UiComponentsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
