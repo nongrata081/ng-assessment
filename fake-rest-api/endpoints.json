@@ -1,13 +1,9 @@
 {
-	"posts": [
-		{
-			"id": 1,
-			"title": "json-server",
-			"author": "typicode"
+	"currency-conversion-rates": {
+		"base": "EUR",
+		"rates": {
+			"GBP": "0.90",
+			"USD": "1.14"
 		}
-	],
-	"comments": [
-		{ "id": 1, "body": "some comment", "postId": 1 }
-	],
-	"profile": { "name": "typicode" }
+	}
 }
