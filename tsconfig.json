@@ -19,7 +19,8 @@
 			"@ss/data": ["libs/data/src/index.ts"],
 			"@ss/ui-components": [
 				"libs/ui-components/src/index.ts"
-			]
+			],
+			"@ss/material": ["libs/material/src/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

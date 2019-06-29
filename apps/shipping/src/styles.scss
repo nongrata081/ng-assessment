@@ -38,3 +38,6 @@
 @import 'itcss/utilities/hidden';
 @import 'itcss/utilities/fullsize_background';
 @import 'itcss/utilities/responsive_utilities';
+
+// angular material components library default styles
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
