@@ -23,7 +23,7 @@
 		"backstop:open:latest": "yarn backstop openReport",
 		"a11y:test": "./node_modules/pa11y/bin/pa11y.js --reporter html http://localhost:4000/ > a11y/pa11y-test-report.html",
 		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Custom app scripts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~": "",
-		"fake:rest:api": "./node_modules/json-server/lib/cli/bin.js --watch endpoints.json",
+		"fake:rest:api": "./node_modules/json-server/lib/cli/bin.js --watch fake-rest-api/endpoints.json",
 		"shipping:hmr": "ng serve shipping --configuration hmr",
 		"serve": "node apps/shipping/serve-script",
 		"compile:server": "webpack --config apps/shipping-backend/webpack.server.config.js --progress --colors",
