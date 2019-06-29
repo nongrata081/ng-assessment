@@ -1,0 +1,51 @@
+<div class="container">
+	<h1 class="content-page-title">Shipment form</h1>
+	<p>Please specify packages for the shipment:</p>
+
+	<ss-package-form
+		(packagesData)="updateTableData($event)"
+		(isPackageFormValid)="updateShipmentForm($event)"
+	></ss-package-form>
+
+	<div class="custom-row">
+		<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+			<ng-container matColumnDef="packageName">
+				<th mat-header-cell *matHeaderCellDef>Name</th>
+				<td mat-cell *matCellDef="let element">{{ element.name }}</td>
+				<td mat-footer-cell *matFooterCellDef>Total: {{ totalPackages }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="packageWeight">
+				<th mat-header-cell *matHeaderCellDef>Weight</th>
+				<td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+				<td mat-footer-cell *matFooterCellDef>Total (kg): {{ totalWeight }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="packageValue">
+				<th mat-header-cell *matHeaderCellDef>Value</th>
+				<td mat-cell *matCellDef="let element">
+					{{ element.value }} {{ element.currency }}
+				</td>
+				<td mat-footer-cell *matFooterCellDef>
+					Total ({{ totalValue.currency }}): {{ totalValue.value }}
+				</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="shipmentTableColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: shipmentTableColumns"></tr>
+			<tr mat-footer-row *matFooterRowDef="shipmentTableColumns"></tr>
+		</table>
+	</div>
+
+	<div>
+		<button
+			type="submit"
+			mat-raised-button
+			color="primary"
+			[disabled]="!shipmentFormValid"
+			(click)="addShipment()"
+		>
+			Send shipment
+		</button>
+	</div>
+</div>
