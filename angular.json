@@ -22,10 +22,7 @@
 						"main": "apps/shipping/src/main.ts",
 						"polyfills": "apps/shipping/src/polyfills.ts",
 						"tsConfig": "apps/shipping/tsconfig.app.json",
-						"assets": [
-							"apps/shipping/src/favicon.ico",
-							"apps/shipping/src/assets"
-						],
+						"assets": ["apps/shipping/src/favicon.ico", "apps/shipping/src/assets"],
 						"styles": [
 							"node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
 							"node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
@@ -66,8 +63,8 @@
 								{
 									"type": "all",
 									"baseline": "750kb",
-									"maximumWarning": "200kb",
-									"maximumError": "400kb"
+									"maximumWarning": "4mb",
+									"maximumError": "6mb"
 								}
 							]
 						},
@@ -244,10 +241,7 @@
 				"lint": {
 					"builder": "@angular-devkit/build-angular:tslint",
 					"options": {
-						"tsConfig": [
-							"libs/data/tsconfig.lib.json",
-							"libs/data/tsconfig.spec.json"
-						],
+						"tsConfig": ["libs/data/tsconfig.lib.json", "libs/data/tsconfig.spec.json"],
 						"exclude": ["**/node_modules/**"]
 					}
 				},
@@ -319,6 +313,28 @@
 			"schematics": {
 				"@nrwl/angular:component": {
 					"styleext": "scss"
+				}
+			}
+		},
+		"utils": {
+			"root": "libs/utils",
+			"sourceRoot": "libs/utils/src",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": ["libs/utils/tsconfig.lib.json", "libs/utils/tsconfig.spec.json"],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/utils/jest.config.js",
+						"tsConfig": "libs/utils/tsconfig.spec.json"
+					}
 				}
 			}
 		}

@@ -1,0 +1,95 @@
+<div [formGroup]="shipment">
+	<div
+		formArrayName="packages"
+		*ngFor="let packageItem of packageItemsForms.controls; index as i"
+	>
+		<div
+			[formGroupName]="i"
+			fxLayout="row wrap"
+			fxLayout.xs="column"
+			fxLayout.sm="column"
+			fxLayoutGap="20px"
+			fxLayoutGap.xs="0px"
+			fxLayoutGap.sm="0px"
+			fxLayoutAlign="flex-start"
+			fxFlex
+		>
+			<mat-form-field
+				appearance="fill"
+				class="package-name-input"
+				fxFlex="0 1 0 calc(25% - 20px)"
+			>
+				<mat-label>Package name</mat-label>
+				<input
+					matInput
+					placeholder="Placeholder"
+					maxlength="32"
+					formControlName="name"
+					required
+				/>
+			</mat-form-field>
+
+			<mat-form-field
+				appearance="fill"
+				class="package-weight-input"
+				fxFlex="0 1 0 calc(25% - 20px)"
+			>
+				<mat-label>Package weight (kg)</mat-label>
+				<input
+					matInput
+					type="text"
+					class="example-right-align"
+					formControlName="weight"
+					required
+				/>
+			</mat-form-field>
+
+			<mat-form-field
+				appearance="fill"
+				class="package-value-input"
+				fxFlex="0 1 0 calc(25% - 20px)"
+			>
+				<mat-label>Package value</mat-label>
+				<input
+					matInput
+					type="text"
+					class="example-right-align"
+					formControlName="value"
+					required
+				/>
+			</mat-form-field>
+
+			<mat-form-field
+				appearance="fill"
+				class="package-currency-input"
+				fxFlex="0 1 0 calc(25% - 20px)"
+			>
+				<mat-label>Currency</mat-label>
+				<mat-select formControlName="currency" required>
+					<mat-option value="EUR">EUR</mat-option>
+					<mat-option value="USD">USD</mat-option>
+					<mat-option value="GBP">GBP</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+</div>
+
+<div>
+	<button
+		mat-raised-button
+		style="margin-right:20px"
+		(click)="addPackage()"
+		[disabled]="disableAddingPackage()"
+	>
+		Add package
+	</button>
+	<button
+		mat-raised-button
+		color="accent"
+		(click)="removePackage()"
+		[disabled]="disableRemovingPackage()"
+	>
+		Remove package
+	</button>
+</div>

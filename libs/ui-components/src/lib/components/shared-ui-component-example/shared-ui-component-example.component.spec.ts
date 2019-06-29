@@ -1,16 +1,10 @@
-import {
-	async,
-	ComponentFixture,
-	TestBed
-} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SharedUiComponentExampleComponent } from './shared-ui-component-example.component';
 
 describe('SharedUiComponentExampleComponent', () => {
 	let component: SharedUiComponentExampleComponent;
-	let fixture: ComponentFixture<
-		SharedUiComponentExampleComponent
-	>;
+	let fixture: ComponentFixture<SharedUiComponentExampleComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -19,9 +13,7 @@ describe('SharedUiComponentExampleComponent', () => {
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(
-			SharedUiComponentExampleComponent
-		);
+		fixture = TestBed.createComponent(SharedUiComponentExampleComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
