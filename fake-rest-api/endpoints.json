@@ -5,5 +5,24 @@
 			"GBP": "0.90",
 			"USD": "1.14"
 		}
-	}
+	},
+	"shipments": [
+		{
+			"id": "1",
+			"packages": [
+				{
+					"id": 1,
+					"name": "Package name #1",
+					"weight": 12,
+					"value": 12.12
+				},
+				{
+					"id": 2,
+					"name": "Package name #2",
+					"weight": 12,
+					"value": 12.12
+				}
+			]
+		}
+	]
 }
