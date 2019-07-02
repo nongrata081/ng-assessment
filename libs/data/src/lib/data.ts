@@ -13,6 +13,7 @@ export interface Package {
 	name: string;
 	weight: number | string;
 	value: number | Value;
+	currency?: Currency;
 }
 
 export interface CurrencyRates {

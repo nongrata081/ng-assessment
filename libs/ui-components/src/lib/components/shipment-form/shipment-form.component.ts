@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CurrencyConversionRates, Package, Shipment, Value } from '@ss/data';
 import { Big } from 'big.js';
 import { CurrencyService } from '../../services/currency/currency.service';
 import { ShipmentService } from '../../services/shipment/shipment.service';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
+import { PackageFormComponent } from '../package-form/package-form.component';
 
 @Component({
 	selector: 'ss-shipment-form',
@@ -12,7 +13,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 	styleUrls: ['./shipment-form.component.scss']
 })
 export class ShipmentFormComponent implements OnInit {
-	packageData;
+	packageData = [{ weight: 0, value: 0 }] as Package[];
 	rates: CurrencyConversionRates;
 
 	shipmentTableColumns: string[] = ['packageName', 'packageWeight', 'packageValue'];
@@ -25,6 +26,7 @@ export class ShipmentFormComponent implements OnInit {
 		value: 0
 	};
 	shipmentFormValid: boolean;
+	@ViewChild(PackageFormComponent, { static: true }) packageForm: PackageFormComponent;
 
 	constructor(
 		private fb: FormBuilder,
@@ -46,7 +48,7 @@ export class ShipmentFormComponent implements OnInit {
 		this.dataSource = $event.packages;
 		this.totalPackages = $event.packages.length;
 
-		if (this.shipmentFormValid) {
+		if (this.shipmentFormValid && !this.packageForm.packages.untouched) {
 			this.getTotalValue();
 			this.getTotalWeight();
 		}
@@ -94,10 +96,12 @@ export class ShipmentFormComponent implements OnInit {
 	}
 
 	updateShipmentForm($event) {
-		this.shipmentFormValid = this.isShipmentFormValid($event);
-		if (this.shipmentFormValid) {
-			this.getTotalValue();
-			this.getTotalWeight();
+		if (this.packageForm.packages.length > 0) {
+			this.shipmentFormValid = this.isShipmentFormValid($event);
+			if (this.shipmentFormValid) {
+				this.getTotalValue();
+				this.getTotalWeight();
+			}
 		}
 	}
 
@@ -109,24 +113,38 @@ export class ShipmentFormComponent implements OnInit {
 			packageData.name = i.name;
 			packageData.weight = Number(i.weight);
 			if (i.currency === 'USD') {
-				packageData.value = Number(new Big(i.value).div(this.rates.USD).toFixed(2));
+				packageData.value = Number(
+					new Big((i.value as unknown) as Big).div(this.rates.USD).toFixed(2)
+				);
 			} else if (i.currency === 'GBP') {
-				packageData.value = Number(new Big(i.value).div(this.rates.GBP).toFixed(2));
+				packageData.value = Number(
+					new Big((i.value as unknown) as Big).div(this.rates.GBP).toFixed(2)
+				);
 			} else if (i.currency === 'EUR') {
 				packageData.value = Number(Number(i.value).toFixed(2));
 			}
 			shipment.packages.push(packageData);
 		});
 
-		this.shipmentService
-			.add(shipment)
-			.subscribe(
-				() => {},
-				error => {},
-				() =>
-					this.snackbarService.openSnackBar(
-						`Shipment successfully saved! : ${JSON.stringify(shipment)}`
-					)
-			);
+		this.shipmentService.add(shipment).subscribe(
+			() => {},
+			error => {},
+			() => {
+				this.snackbarService.openSnackBar(
+					`Shipment successfully saved! : ${JSON.stringify(shipment)}`
+				);
+				this.clearForm();
+			}
+		);
+	}
+
+	clearForm() {
+		while (this.packageForm.packages.length !== 1) {
+			this.packageForm.packages.removeAt(0);
+		}
+		this.packageForm.packages.reset();
+		this.totalPackages = 0;
+		this.totalWeight = 0;
+		this.totalValue.value = 0;
 	}
 }

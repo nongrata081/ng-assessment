@@ -63,8 +63,8 @@
 								{
 									"type": "all",
 									"baseline": "750kb",
-									"maximumWarning": "200kb",
-									"maximumError": "400kb"
+									"maximumWarning": "4mb",
+									"maximumError": "6mb"
 								}
 							]
 						},

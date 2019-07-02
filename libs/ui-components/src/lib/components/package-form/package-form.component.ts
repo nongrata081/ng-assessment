@@ -24,10 +24,6 @@ export class PackageFormComponent implements OnInit, OnDestroy {
 		this.packageDataSubscription = this.shipment.valueChanges.subscribe(val => {
 			this.packagesData.emit(val);
 			this.isPackageFormValid.emit(this.shipment.valid);
-			console.log(
-				'this.shipment.valueChanges, this.shipment.valid:',
-				this.shipment.valid
-			);
 		});
 	}
 
@@ -57,7 +53,11 @@ export class PackageFormComponent implements OnInit, OnDestroy {
 
 	disableRemovingPackage(): boolean {
 		this.packages = this.shipment.get('packages') as FormArray;
-		return this.packages.length === 1;
+		return this.packages.length <= 1;
+	}
+
+	get packageItemsForms() {
+		return <FormArray>this.shipment.get('packages');
 	}
 
 	ngOnDestroy() {

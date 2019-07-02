@@ -1,7 +1,7 @@
 <div [formGroup]="shipment">
 	<div
 		formArrayName="packages"
-		*ngFor="let packageItem of shipment.get('packages').controls; index as i"
+		*ngFor="let packageItem of packageItemsForms.controls; index as i"
 	>
 		<div
 			[formGroupName]="i"
