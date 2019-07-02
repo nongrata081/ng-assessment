@@ -5,5 +5,314 @@
 			"GBP": "0.90",
 			"USD": "1.14"
 		}
-	}
+	},
+	"shipments": [
+		{
+			"id": "1",
+			"packages": [
+				{
+					"id": 1,
+					"name": "Package name #1",
+					"weight": 12,
+					"value": 12.12
+				},
+				{
+					"id": 2,
+					"name": "Package name #2",
+					"weight": 12,
+					"value": 12.12
+				}
+			]
+		},
+		{
+			"packages": [
+				{
+					"name": "adfadf",
+					"weight": 3.123,
+					"value": 10.64
+				},
+				{
+					"name": "fadfag",
+					"weight": 3.231,
+					"value": 47.91
+				}
+			],
+			"id": "UiYl4c4"
+		},
+		{
+			"packages": [
+				{
+					"name": "Some Piro",
+					"weight": 3.123,
+					"value": 5.9
+				},
+				{
+					"name": "fadf",
+					"weight": 3.123,
+					"value": 36.17
+				}
+			],
+			"id": "dv-A5NI"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfadf",
+					"weight": 3.123,
+					"value": 4.49
+				}
+			],
+			"id": "06Le_ZV"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfaf",
+					"weight": 2.123,
+					"value": 28.18
+				}
+			],
+			"id": "yDEyJZr"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfaf",
+					"weight": 2.123,
+					"value": 28.18
+				}
+			],
+			"id": "sCW_SoJ"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfaf",
+					"weight": 2.123,
+					"value": 28.18
+				}
+			],
+			"id": "NdX8N75"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfadf",
+					"weight": 2.123,
+					"value": 3.61
+				}
+			],
+			"id": "tCKvdGt"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfadf",
+					"weight": 2.123,
+					"value": 3.61
+				}
+			],
+			"id": "j5HF1R1"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfa",
+					"weight": 3.123,
+					"value": 28.18
+				}
+			],
+			"id": "ipp6qtc"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 3.123,
+					"value": 20.28
+				}
+			],
+			"id": "GZmi38V"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 3.23,
+					"value": 1.86
+				}
+			],
+			"id": "cw1tEGO"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 1.23,
+					"value": 20.38
+				}
+			],
+			"id": "MAsKCx2"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 2.12,
+					"value": 2.74
+				}
+			],
+			"id": "uoWSFUK"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfaf",
+					"weight": 2.12,
+					"value": 1.86
+				}
+			],
+			"id": "w4ES0ld"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfaf",
+					"weight": 2.12,
+					"value": 2.36
+				}
+			],
+			"id": "cfzzK15"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 2.123,
+					"value": 32.12
+				}
+			],
+			"id": "U-0rFqc"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 2.123,
+					"value": 28.18
+				}
+			],
+			"id": "0XKdK-J"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 3.12,
+					"value": 3.12
+				}
+			],
+			"id": "1LbceN-"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 3.12,
+					"value": 2.74
+				}
+			],
+			"id": "ZOgGs1_"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 3.12,
+					"value": 3.47
+				}
+			],
+			"id": "LAfdN44"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 3.12,
+					"value": 23.12
+				}
+			],
+			"id": "nsDbkQI"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 1,
+					"value": 25.56
+				}
+			],
+			"id": "IPy0uew"
+		},
+		{
+			"packages": [
+				{
+					"name": "dadf",
+					"weight": 2.1,
+					"value": 0.88
+				}
+			],
+			"id": "S9sNOAP"
+		},
+		{
+			"packages": [
+				{
+					"name": "adfadf",
+					"weight": 1,
+					"value": 20.28
+				}
+			],
+			"id": "TIklosU"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 2.1,
+					"value": 136.8
+				}
+			],
+			"id": "k2wTxjs"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 2.12,
+					"value": 20.28
+				}
+			],
+			"id": "EqELFUC"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 1.23,
+					"value": 20.28
+				}
+			],
+			"id": "6Tdb86O"
+		},
+		{
+			"packages": [
+				{
+					"name": "adf",
+					"weight": 2.12,
+					"value": 3.61
+				}
+			],
+			"id": "UoXbpwz"
+		}
+	]
 }

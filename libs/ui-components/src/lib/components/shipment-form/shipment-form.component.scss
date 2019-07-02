@@ -1,0 +1,33 @@
+button {
+	outline: none;
+}
+
+.container {
+	padding-bottom: 80px;
+}
+
+.mat-column-packageName {
+	width: 40%;
+}
+.mat-column-packageWeight {
+	width: 20%;
+}
+.mat-column-packageValue {
+	width: 40%;
+}
+
+table {
+	width: 100%;
+
+	.mat-footer-cell {
+		font-weight: bold;
+	}
+}
+
+//::ng-deep snack-bar-container.custom-class {
+//  background: yellow;
+//}
+
+::ng-deep .snackbar-custom-styles .mat-simple-snackbar {
+	font-weight: 900;
+}

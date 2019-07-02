@@ -25,6 +25,9 @@
 		},
 		"material": {
 			"tags": []
+		},
+		"utils": {
+			"tags": []
 		}
 	}
 }
