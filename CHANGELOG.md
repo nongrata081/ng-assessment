@@ -1,3 +1,17 @@
+<a name="0.5.0"></a>
+
+# [0.5.0](https://github.com/nongrata081/ng-assessment/compare/v0.4.0...v0.5.0) (2019-07-04)
+
+### Features
+
+- **angular-material:** add material components library for angular ([9e1b442](https://github.com/nongrata081/ng-assessment/commit/9e1b442)), closes [#119](https://github.com/nongrata081/ng-assessment/issues/119)
+- **currency-api-mock:** add currency mocked rest api (json-server) ([6895e36](https://github.com/nongrata081/ng-assessment/commit/6895e36)), closes [#114](https://github.com/nongrata081/ng-assessment/issues/114)
+- **footer:** add reusable footer ui component ([35ddc58](https://github.com/nongrata081/ng-assessment/commit/35ddc58)), closes [#125](https://github.com/nongrata081/ng-assessment/issues/125)
+- **header-ui-component:** add resuable ui component header ([5541c4d](https://github.com/nongrata081/ng-assessment/commit/5541c4d)), closes [#121](https://github.com/nongrata081/ng-assessment/issues/121)
+- **itcss:** implement proper styles layered structure ([5edc5da](https://github.com/nongrata081/ng-assessment/commit/5edc5da)), closes [#117](https://github.com/nongrata081/ng-assessment/issues/117)
+- **mdb-ui-lib:** add mdb components library ([70b6bb0](https://github.com/nongrata081/ng-assessment/commit/70b6bb0)), closes [#122](https://github.com/nongrata081/ng-assessment/issues/122)
+- **shipment-form:** add shipment form ([3b6180a](https://github.com/nongrata081/ng-assessment/commit/3b6180a)), closes [#113](https://github.com/nongrata081/ng-assessment/issues/113)
+
 <a name="0.4.0"></a>
 
 # [0.4.0](https://github.com/nongrata081/ng-assessment/compare/v0.3.0...v0.4.0) (2019-06-27)
@@ -5,15 +19,18 @@
 ### Bug Fixes
 
 - **disable-i18n-for-ssr:** postpone i18n for universal ssr ([9b3eac4](https://github.com/nongrata081/ng-assessment/commit/9b3eac4)), closes [#16](https://github.com/nongrata081/ng-assessment/issues/16) [#31](https://github.com/nongrata081/ng-assessment/issues/31)
+- **disable-i18n-for-ssr:** postpone i18n for universal ssr ([685597e](https://github.com/nongrata081/ng-assessment/commit/685597e)), closes [#16](https://github.com/nongrata081/ng-assessment/issues/16) [#31](https://github.com/nongrata081/ng-assessment/issues/31)
 
 ### Features
 
 - **a11y-testing:** add a11y-testing with pa11y tool ([8cba77f](https://github.com/nongrata081/ng-assessment/commit/8cba77f)), closes [#25](https://github.com/nongrata081/ng-assessment/issues/25)
 - **bundle-analyzer:** add webpack-bundle-analyzer ([785a313](https://github.com/nongrata081/ng-assessment/commit/785a313)), closes [#21](https://github.com/nongrata081/ng-assessment/issues/21)
+- **bundle-analyzer:** add webpack-bundle-analyzer ([9036ffb](https://github.com/nongrata081/ng-assessment/commit/9036ffb)), closes [#21](https://github.com/nongrata081/ng-assessment/issues/21)
 - **compodoc-docs-generation:** add docs generation for apps (compodoc) ([1234d97](https://github.com/nongrata081/ng-assessment/commit/1234d97)), closes [#34](https://github.com/nongrata081/ng-assessment/issues/34)
 - **performance-metrics:** perf metrics & best practice audit ([e62f8e4](https://github.com/nongrata081/ng-assessment/commit/e62f8e4)), closes [#22](https://github.com/nongrata081/ng-assessment/issues/22)
 - **storybook:** add styleguide app for ui lib components ([dd8c6dd](https://github.com/nongrata081/ng-assessment/commit/dd8c6dd)), closes [#35](https://github.com/nongrata081/ng-assessment/issues/35)
 - **travis-ci:** add .travis.yml to enable travis ci ([58a9949](https://github.com/nongrata081/ng-assessment/commit/58a9949)), closes [#19](https://github.com/nongrata081/ng-assessment/issues/19)
+- **travis-ci:** add .travis.yml to enable travis ci ([1dc0b45](https://github.com/nongrata081/ng-assessment/commit/1dc0b45)), closes [#19](https://github.com/nongrata081/ng-assessment/issues/19)
 - **visual-regression-testing:** add visual regression via backstop ([25f07de](https://github.com/nongrata081/ng-assessment/commit/25f07de)), closes [#18](https://github.com/nongrata081/ng-assessment/issues/18)
 
 <a name="0.3.0"></a>

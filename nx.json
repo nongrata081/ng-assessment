@@ -22,6 +22,12 @@
 		},
 		"ui-components": {
 			"tags": []
+		},
+		"material": {
+			"tags": []
+		},
+		"utils": {
+			"tags": []
 		}
 	}
 }

@@ -3,20 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { UiComponentsModule } from '@ss/ui-components';
-// import {
-// 	TranslateModule,
-// 	TranslateLoader
-// } from '@ngx-translate/core';
-// import {
-// 	HttpClientModule,
-// 	HttpClient
-// } from '@angular/common/http';
-// import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-// AoT requires an exported function for factories
-// export function HttpLoaderFactory(http: HttpClient) {
-// 	return new TranslateHttpLoader(http);
-// }
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@ss/material';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -24,19 +15,16 @@ import { UiComponentsModule } from '@ss/ui-components';
 		BrowserModule.withServerTransition({
 			appId: 'serverApp'
 		}),
+		BrowserAnimationsModule,
 		RouterModule.forRoot([], {
 			initialNavigation: 'enabled'
 		}),
 		RouterModule,
-		UiComponentsModule
-		// HttpClientModule,
-		// TranslateModule.forRoot({
-		// 	loader: {
-		// 		provide: TranslateLoader,
-		// 		useFactory: HttpLoaderFactory,
-		// 		deps: [HttpClient]
-		// 	}
-		// })
+		MDBBootstrapModule.forRoot(),
+		MaterialModule,
+		UiComponentsModule,
+		ReactiveFormsModule,
+		FlexLayoutModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

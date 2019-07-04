@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/shipping-visual-regression-test_homepage_0_document_0_phone.png",
-        "test": "../bitmaps_test/20190627-150623/shipping-visual-regression-test_homepage_0_document_0_phone.png",
+        "test": "../bitmaps_test/20190629-120536/shipping-visual-regression-test_homepage_0_document_0_phone.png",
         "selector": "document",
         "fileName": "shipping-visual-regression-test_homepage_0_document_0_phone.png",
         "label": "homepage",
@@ -28,7 +28,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/shipping-visual-regression-test_homepage_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20190627-150623/shipping-visual-regression-test_homepage_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20190629-120536/shipping-visual-regression-test_homepage_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "shipping-visual-regression-test_homepage_0_document_1_tablet.png",
         "label": "homepage",
@@ -52,7 +52,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/shipping-visual-regression-test_homepage_0_document_2_desktop.png",
-        "test": "../bitmaps_test/20190627-150623/shipping-visual-regression-test_homepage_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20190629-120536/shipping-visual-regression-test_homepage_0_document_2_desktop.png",
         "selector": "document",
         "fileName": "shipping-visual-regression-test_homepage_0_document_2_desktop.png",
         "label": "homepage",

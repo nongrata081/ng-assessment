@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Settings: font, colors definitions, etc. */
+@import 'itcss/settings/text';
+@import 'itcss/settings/colors';
+@import 'itcss/settings/variables';
+@import 'itcss/settings/transitions';
+
+/* Tools: globally used mixins and functions */
+@import 'itcss/tools/flexbox';
+@import 'itcss/tools/mixins';
+@import 'itcss/tools/media-queries';
+@import 'itcss/tools/chevron';
+
+/* Generic: reset and/or normalize styles, box-sizing definition, etc */
+@import 'itcss/generic/reset';
+@import 'itcss/generic/_normalize';
+@import 'itcss/generic/form_elements';
+@import 'itcss/generic/transitions';
+
+/* Elements: styling for bare HTML elements (like H1, A, etc.) */
+@import 'itcss/elements/document';
+@import 'itcss/elements/headings';
+@import 'itcss/elements/texts';
+@import 'itcss/elements/links';
+
+/* Objects: class-based selectors which define undecorated design patterns, e.g. media object from OOCSS */
+@import 'itcss/objects/wrapper';
+@import 'itcss/objects/shell';
+@import 'itcss/objects/main';
+@import 'itcss/objects/grid';
+
+/* Components: absent due to angular componentised file structure, component styles reside in components' folders */
+
+/* Utilities: utils and helper classes with ability to override anything declared above */
+@import 'itcss/utilities/text_align';
+@import 'itcss/utilities/align';
+@import 'itcss/utilities/hidden';
+@import 'itcss/utilities/fullsize_background';
+@import 'itcss/utilities/responsive_utilities';
+
+// angular material components library default styles
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
