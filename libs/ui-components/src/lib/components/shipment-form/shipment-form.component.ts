@@ -15,10 +15,8 @@ import { PackageFormComponent } from '../package-form/package-form.component';
 export class ShipmentFormComponent implements OnInit {
 	packageData = [{ weight: 0, value: 0 }] as Package[];
 	rates: CurrencyConversionRates;
-
 	shipmentTableColumns: string[] = ['packageName', 'packageWeight', 'packageValue'];
 	dataSource = this.packageData;
-
 	totalPackages = 1;
 	totalWeight = 0;
 	totalValue: Value = {
@@ -26,6 +24,7 @@ export class ShipmentFormComponent implements OnInit {
 		value: 0
 	};
 	shipmentFormValid: boolean;
+
 	@ViewChild(PackageFormComponent, { static: true }) packageForm: PackageFormComponent;
 
 	constructor(
