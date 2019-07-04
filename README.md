@@ -1,5 +1,19 @@
 # NgAssessment
 
+# Prerequisites
+
+To start the app required are:
+
+- Node@10.15.3
+- npm@6.4.1
+
+## Start app
+
+Run `npm start` to start the application. This will start:
+
+- fake rest api server at http://localhost:3000
+- angular app at http://localhost:4200
+
 ## Guidelines for monorepo
 
 [Enterprise angular monorepo patterns](enterprise-angular-mono-repo-patterns.pdf)
