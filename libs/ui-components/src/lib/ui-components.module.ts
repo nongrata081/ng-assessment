@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedUiComponentExampleComponent } from './components/shared-ui-component-example/shared-ui-component-example.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,14 +20,12 @@ import { HttpClientModule } from '@angular/common/http';
 	],
 	declarations: [
 		HeaderComponent,
-		SharedUiComponentExampleComponent,
 		FooterComponent,
 		ShipmentFormComponent,
 		PackageFormComponent
 	],
 	exports: [
 		HeaderComponent,
-		SharedUiComponentExampleComponent,
 		FooterComponent,
 		ShipmentFormComponent,
 		PackageFormComponent
