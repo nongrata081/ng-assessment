@@ -130,7 +130,7 @@
 		"conventional-recommended-bump": "latest",
 		"cypress": "3.3.1",
 		"cz-conventional-changelog": "latest",
-		"dotenv": "6.2.0",
+		"dotenv": "8.2.0",
 		"enforce-gitflow-branches": "latest",
 		"husky": "latest",
 		"jest": "24.1.0",
