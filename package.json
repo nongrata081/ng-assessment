@@ -80,7 +80,7 @@
 		"@nestjs/core": "6.3.2",
 		"@nestjs/ng-universal": "1.1.1",
 		"@nestjs/platform-express": "6.3.2",
-		"@nguniversal/express-engine": "7.1.1",
+		"@nguniversal/express-engine": "8.2.6",
 		"@nguniversal/module-map-ngfactory-loader": "7.1.1",
 		"@ngx-translate/core": "11.0.1",
 		"@ngx-translate/http-loader": "4.0.0",
