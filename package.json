@@ -128,7 +128,7 @@
 		"commitizen": "latest",
 		"conventional-changelog-cli": "latest",
 		"conventional-recommended-bump": "latest",
-		"cypress": "3.3.1",
+		"cypress": "3.8.3",
 		"cz-conventional-changelog": "latest",
 		"dotenv": "6.2.0",
 		"enforce-gitflow-branches": "latest",
