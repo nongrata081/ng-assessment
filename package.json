@@ -120,7 +120,7 @@
 		"@storybook/addon-notes": "^5.1.9",
 		"@storybook/addons": "^5.1.9",
 		"@storybook/angular": "^5.1.9",
-		"@types/jest": "24.0.9",
+		"@types/jest": "24.9.1",
 		"@types/node": "8.9.5",
 		"babel-loader": "^8.0.6",
 		"backstopjs": "^4.1.9",
