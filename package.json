@@ -124,7 +124,7 @@
 		"@types/node": "8.9.5",
 		"babel-loader": "^8.0.6",
 		"backstopjs": "^4.1.9",
-		"codelyzer": "5.0.1",
+		"codelyzer": "5.2.2",
 		"commitizen": "latest",
 		"conventional-changelog-cli": "latest",
 		"conventional-recommended-bump": "latest",
